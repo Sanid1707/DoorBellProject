@@ -64,7 +64,7 @@ def upload_image():
         return jsonify({"status": "success"}), 201
 
     except Exception as e:
-        app.logger.error(f"Error processing request: {e}")
+        app.logger.error(f"Error processingg request: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
 
 @app.route('/faces', methods=['GET'])
