@@ -4,6 +4,6 @@ services:
     env: python
     plan: free
     buildCommand: |
-      apt-get update && apt-get install -y cmake
+      apt-get update && apt-get install -y cmake build-essential
       pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn --bind 0.0.0.0:5001 app:app
