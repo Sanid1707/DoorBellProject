@@ -56,7 +56,7 @@ def upload_image():
         cursor = conn.cursor()
         cursor.execute(
             "INSERT INTO faces (first_name, last_name, face_embedding) VALUES (%s, %s, %s)",
-            (first_name, last_name, psycopg2.Binary(face_embedding))
+            (first_name, last_name, psycopg2.Binary(face_embedding.tobytes()))
         )
         conn.commit()
         cursor.close()
